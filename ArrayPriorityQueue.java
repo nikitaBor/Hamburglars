@@ -1,15 +1,15 @@
 
 import java.util.ArrayList;
-public class ArrayPriorityQueue<Comparable> implements PriorityQueue<Comparable>{
+public class ArrayPriorityQueue<Ticket extends Comparable>{
 
-    ArrayList<Comparable> _data;
+    ArrayList<Ticket> _data;
 
     public ArrayPriorityQueue() {
-        _data = new ArrayList<Comparable>();
+        _data = new ArrayList<Ticket>();
     }
      
     //adds an item to this priority queue
-    public void add (Comparable x) {
+    public void add (Ticket x) {
         int lo = 0;
         int mid = 0;
         int hi = _data.size()-1;
@@ -44,65 +44,24 @@ public class ArrayPriorityQueue<Comparable> implements PriorityQueue<Comparable>
     }
      
     //returns the smallest item stored in the array
-    public Comparable peekMin() {
+    public Ticket peekMin() {
         return _data.get(_data.size() - 1);
     }
      
-    public Comparable removeMin() {
-        Comparable temp = peekMin();
+    public Ticket removeMin() {
+        Ticket temp = peekMin();
         _data.remove(temp);
         return temp;
     }
 
     public String toString() {
 	String retStr = "";
-	for (Comparable x : _data) {
+	for (Ticket x : _data) {
 	    retStr += x + ",";
 	}
 	return retStr;
     }
 
-    public static void main(String[] args) {
-	ArrayPriorityQueue<Comparable> test = new ArrayPriorityQueue<Comparable>();
-	System.out.println(test.isEmpty());
-	test.add(1);
-	test.add(2);
-	test.add(2);
-	test.add(2);
-	test.add(3);
-	test.add(3);
-	test.add(4);
-	test.add(4);
-	test.add(4);
-	System.out.println(test);
-	test.add(5);
-	System.out.println(test);
-	test.add(4);
-	System.out.println(test);
-	test.add(3);
-	System.out.println(test);
-	test.add(2);
-	System.out.println(test);
-	test.add(1);
-	System.out.println(test);
-	System.out.println(test.isEmpty());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test);
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.removeMin());
-	System.out.println(test.isEmpty());
-    }
 }
 
 
