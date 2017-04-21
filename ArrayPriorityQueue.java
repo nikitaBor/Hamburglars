@@ -1,6 +1,6 @@
 
 import java.util.ArrayList;
-public class ArrayPriorityQueue<Ticket extends Comparable>{
+public class ArrayPriorityQueue<Ticket extends Comparable> implements PriorityQueue{
 
     ArrayList<Ticket> _data;
 
