@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-public class Ticket{
+public class Ticket implements Comparable{
     private int priority;
     private String name;
     private String deskOp;
-	
     public Ticket(){
         //default initializations
         name = "UNKNOWN USER";
@@ -18,12 +17,12 @@ public class Ticket{
         String ans = reader.nextLine();
         if(ans.equals("y")){
             priority = 2; 
-            deskOp = "broken cupholder";
+            deskOp = "brokenCupholder";
         }
         else{
             System.out.println("The only other problem people have with computers are viruses.");
             priority = 1;
-            deskOp = "viruses";
+            deskOp = "reinstallOS";
         }
         System.out.println("Please stand by.");
         System.out.println("------------");
