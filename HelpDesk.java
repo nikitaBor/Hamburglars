@@ -48,7 +48,7 @@ public class HelpDesk {
 	//}
     
     //respond method to help user after a dequeue
-    //public void respond(){
+    public void respond(){
         System.out.println("Thank you for your patience " + t.getName());
         if(t.getDeskOp().equals("reinstallOS")){
             System.out.println("You will need to reinstall your OS to get rid of viruses.");
