@@ -1,3 +1,9 @@
+/*===
+ * class HelpDesk
+ * uses class Ticket and ArrayPriorityQueue
+ * implementation of a help desk using a priority queue
+  ==*/
+
 import java.util.ArrayList;
 import java.io.*;
 

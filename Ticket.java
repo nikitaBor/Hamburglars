@@ -1,11 +1,18 @@
+/*=====
+ * class Ticket
+ * will be used for class HelpDesk
+  =====*/
+
 import java.util.Scanner;
 
-public class Ticket implements Comparable{
+public class Ticket implements Comparable<Ticket>{
+    
     private int priority;
     private String name;
     private String deskOp;
     private int _ID;
     private boolean helped;
+    
     public Ticket(int newID){
         //default initializations
         _ID = -1;
@@ -35,7 +42,7 @@ public class Ticket implements Comparable{
     }
 
 	//compareTo method for enqueueing
-    public int compareTo(Object other){
+    public int compareTo(Ticket other){
         if( this.priority < ((Ticket)other).priority){
             return -1;
         }
@@ -46,18 +53,23 @@ public class Ticket implements Comparable{
     }
        
     //accessors
+    
     public String getName(){
         return name;
     }
+    
     public String getDeskOp(){
         return deskOp;
     }
+    
     public boolean getHelped(){
         return helped;
-    } 
+    }
+    
     public void setHelped(boolean b){
         helped = b;
     }
+    
     //main method for testing
     /* public static void main(String[] args){
         Ticket bob = new Ticket();//answer y

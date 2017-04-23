@@ -1,5 +1,13 @@
+/*=======
+ * class ArrayPriorityQueue
+ * implements a priority queue 
+ * elements are added in priority
+ * uses an ArrayList
+ * last element is removed (the end)
+ =======*/
 
 import java.util.ArrayList;
+
 public class ArrayPriorityQueue<Ticket extends Comparable> implements PriorityQueue<Ticket>{
 
     ArrayList<Ticket> _data;
@@ -8,7 +16,8 @@ public class ArrayPriorityQueue<Ticket extends Comparable> implements PriorityQu
         _data = new ArrayList<Ticket>();
     }
      
-    //adds an item to this priority queue
+    //adds an item to this priority queue, based on the priority
+    //uses binary search
     public void add (Ticket x) {
         int lo = 0;
         int mid = 0;
@@ -35,24 +44,35 @@ public class ArrayPriorityQueue<Ticket extends Comparable> implements PriorityQu
         }
         // x IS NOT PRESENT; insert x at lo.
         _data.add(lo, x);
-    }
+    } // O(logn)
 
      
     //returns true if this stack is empty, otherwise returns false
     public boolean isEmpty() {
         return _data.size() == 0;
-    }
+    } //O(1)
      
     //returns the smallest item stored in the array
     public Ticket peekMin() {
-        return _data.get(_data.size() - 1);
-    }
-     
+	if (isEmpty()) {
+	    throw new RuntimeException();
+	}
+	else {
+	    return _data.get(_data.size() - 1);
+	}
+    } //O(1)
+
+    // removes and returns smallest item stored in the array
     public Ticket removeMin() {
-        Ticket temp = peekMin();
-        _data.remove(temp);
-        return temp;
-    }
+	if (isEmpty()) {
+	    throw new RuntimeException();
+	}
+	else {
+	    Ticket temp = peekMin();
+	    _data.remove(temp);
+	    return temp;
+	}
+    } //O(1)
 
     public String toString() {
 	String retStr = "";
@@ -60,7 +80,7 @@ public class ArrayPriorityQueue<Ticket extends Comparable> implements PriorityQu
 	    retStr += x + ",";
 	}
 	return retStr;
-    }
+    } //O(n)
 
 }
 

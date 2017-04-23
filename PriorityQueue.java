@@ -1,7 +1,19 @@
+/*=======
+ * public interface PriorityQueue
+ ========*/
+
 public interface PriorityQueue<Ticket> {
-  void add (Ticket x);
-  boolean isEmpty();
-  Ticket peekMin();
-  Ticket removeMin();
-  String toString();
+
+    // adds an item to the priority queue
+    void add (Ticket x);
+
+    // returns true if the queue is empty, false otherwise
+    boolean isEmpty();
+
+    // returns the smallest item stored in the priority queue
+    Ticket peekMin();
+
+    // returns and removes the smallest item stored in the priority queue
+    Ticket removeMin();
+
 }
