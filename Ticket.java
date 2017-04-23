@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class Ticket implements Comparable{
+public class Ticket{
     private int priority;
     private String name;
     private String deskOp;
+	
     public Ticket(){
         //default initializations
         name = "UNKNOWN USER";
