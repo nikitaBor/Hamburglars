@@ -8,9 +8,9 @@ import java.util.Scanner;
     public Ticket(){
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("what is your name?");
-        username = reader.readLine();
+        username = reader.nextLine();
         System.out.println("do you have a problem with your cupholder(y/n)");
-        String ans = reader.readLine();
+        String ans = reader.nextLine();
         if(ans.equals("y")){
             priority = 2; 
             deskOp = "broken cupholder";
