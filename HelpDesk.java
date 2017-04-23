@@ -4,6 +4,7 @@ import java.io.*;
 public class HelpDesk {
 
     private ArrayPriorityQueue<Ticket> _data;
+    private int IDtracker = 0;
 
     public HelpDesk() {
         _data = new ArrayPriorityQueue<Ticket>();
@@ -23,6 +24,10 @@ public class HelpDesk {
         }
         System.out.println("We hope that we were helpful.");
         System.out.println("------------");
+    }
+    
+    public void IDtracker() {
+        IDtracker += 1;   
     }
 
 }
