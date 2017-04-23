@@ -4,18 +4,18 @@ public class Ticket implements Comparable{
     private int priority;
     private String name;
     private String deskOp;
-    private int ID;
+    private int _ID;
     private boolean helped;
     public Ticket(int newID){
         //default initializations
-        ID = -1;
+        _ID = -1;
         name = "UNKNOWN USER";
         priority = -1;
         deskOp = "UNKNOWN DESKOP";
         helped = false;
         //
         
-        ID = newID;
+        _ID = newID;
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Welcome to the help desk. What is your name?");
         name = reader.nextLine();
