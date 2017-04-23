@@ -1,4 +1,5 @@
-public class Ticket implements Comparable{
+import java.util.Scanner;
+	public class Ticket implements Comparable{
     private int priority;
     private String name;
 	private String deskOp;
