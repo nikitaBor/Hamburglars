@@ -4,12 +4,18 @@ public class Ticket implements Comparable{
     private int priority;
     private String name;
     private String deskOp;
-    public Ticket(){
+    private int ID;
+    private boolean helped;
+    public Ticket(int newID){
         //default initializations
+        ID = -1;
         name = "UNKNOWN USER";
         priority = -1;
         deskOp = "UNKNOWN DESKOP";
+        helped = false;
+        //
         
+        ID = newID;
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Welcome to the help desk. What is your name?");
         name = reader.nextLine();
@@ -39,12 +45,18 @@ public class Ticket implements Comparable{
         else{return 1;}
     }
        
-    //accessors for name and deskOp
+    //accessors
     public String getName(){
         return name;
     }
     public String getDeskOp(){
         return deskOp;
+    }
+    public boolean getHelped(){
+        return helped;
+    } 
+    public void setHelped(boolean b){
+        helped = b;
     }
     //main method for testing
     /* public static void main(String[] args){
