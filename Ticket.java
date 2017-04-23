@@ -38,23 +38,14 @@ public class Ticket implements Comparable{
         }
         else{return 1;}
     }
-    
-    //respond method to help user after a dequeue
-    public void respond(){
-        System.out.println("Thank you for your patience " + name);
-        if(priority == -1){
-            System.out.println("Error you have not made a request");
-        }
-        else if(priority == 1){
-            System.out.println("You will need to reinstall your OS to get rid of viruses.");
-        }
-        else if(priority == 2){
-            System.out.println("That isn't a cupholder. It is a cd drive.");
-        }
-        System.out.println("We hope that we were helpful.");
-        System.out.println("------------");
+       
+    //accessors for name and deskOp
+    public String getName(){
+        return name;
     }
-    
+    public String getDeskOp(){
+        return deskOp;
+    }
     //main method for testing
     /* public static void main(String[] args){
         Ticket bob = new Ticket();//answer y
@@ -63,7 +54,5 @@ public class Ticket implements Comparable{
         System.out.println(bob.compareTo(bill)); //returns -1
         System.out.println(bill.compareTo(bob));//returns 1
         System.out.println(bill.compareTo(jill));//returns 0
-        bob.respond();
-        bill.respond();
     } */
 }
