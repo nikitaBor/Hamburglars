@@ -21,8 +21,9 @@ public class Ticket implements Comparable<Ticket>{
         deskOp = "UNKNOWN DESKOP";
         helped = false;
         //
-        
+	        
         _ID = newID;
+	/*
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Welcome to the help desk. What is your name?");
         name = reader.nextLine();
@@ -39,6 +40,7 @@ public class Ticket implements Comparable<Ticket>{
         }
         System.out.println("Please stand by.");
         System.out.println("------------");
+	*/
     }
 
 	//compareTo method for enqueueing
@@ -58,8 +60,20 @@ public class Ticket implements Comparable<Ticket>{
         return name;
     }
     
+    public String setName(String newName){
+	String oldName = name;
+	name = newName;
+	return oldName;
+    }
+    
     public String getDeskOp(){
         return deskOp;
+    }
+
+    public String setDeskOp(String newDeskOp){
+	String oldDeskOp = deskOp;
+	deskOp = newDeskOp;
+	return oldDeskOp;
     }
     
     public boolean getHelped(){
@@ -68,6 +82,12 @@ public class Ticket implements Comparable<Ticket>{
     
     public void setHelped(boolean b){
         helped = b;
+    }
+
+    public int setPriority(int newPriority){
+	int oldPriority = priority;
+	priority = newPriority;
+	return oldPriority;
     }
     
     //main method for testing
@@ -79,4 +99,26 @@ public class Ticket implements Comparable<Ticket>{
         System.out.println(bill.compareTo(bob));//returns 1
         System.out.println(bill.compareTo(jill));//returns 0
     } */
+
+    public static void main(String[] args){
+	/*
+	Ticket john = new Ticket(47);
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+        System.out.println("Welcome to the help desk. What is your name?");
+        john.name = reader.nextLine();
+        System.out.println("Do you have a problem with your cupholder?(y/n)");
+        String ans = reader.nextLine();
+        if(ans.equals("y")){
+            john.priority = 2; 
+            john.deskOp = "brokenCupholder";
+        }
+        else{
+            System.out.println("The only other problem people have with computers are viruses.");
+            john.priority = 1;
+            john.deskOp = "reinstallOS";
+        }
+        System.out.println("Please stand by.");
+        System.out.println("------------");
+	*/
+    }
 }
