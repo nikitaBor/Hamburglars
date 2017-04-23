@@ -1,6 +1,9 @@
 public class Ticket implements Comparable{
     private int priority;
     private String name;
+	private String deskOp;
+	private String username;
+	
     public Ticket(){
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("what is your name?");
