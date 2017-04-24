@@ -79,7 +79,7 @@ public class HelpDesk {
 	while(!(hello.dataEmpty())){
 	    hello.helpSequence();
 	    //hello.respond();
-	    hello.IDtracker();
+	    hello.setIDtracker();
 	}
 	/*
 	Ticket john = new Ticket(47);
