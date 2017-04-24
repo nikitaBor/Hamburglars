@@ -63,7 +63,7 @@ public class HelpDesk {
         System.out.println("------------");
     }
     
-    public void IDtracker() {
+    public void setIDtracker() {
         IDtracker += 1;   
     }
     
