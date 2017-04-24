@@ -12,6 +12,7 @@ public class HelpDesk {
 
     private ArrayPriorityQueue<Ticket> _data;
     private int IDtracker = 0;
+    private boolean continuous = false;
 
     public HelpDesk() {
         _data = new ArrayPriorityQueue<Ticket>();
@@ -20,35 +21,53 @@ public class HelpDesk {
     public boolean dataEmpty(){
 	return _data.isEmpty();
     }
-    
-    public void createTicket(){
-	Ticket jeff = new Ticket(setIDtracker());	
-	_data.add(jeff);
-    }
 
+    public void continuous(){
+	Scanner prelim = new Scanner(System.in);
+	System.out.println("Welcome to the help desk. Do you need help? (y/n)");
+	String ans = prelim.nextLine();
+	if(ans.equals("y")){
+	    continuous = true;
+	}
+	else{
+	    continuous = false;
+	}
+    }
+    
     public void helpSequence(){
-	Ticket t = (Ticket)_data.removeMin();
+	//	Ticket t = (Ticket)_data.removeMin();
 
         Scanner reader = new Scanner(System.in);  // Reading from System.in     
         System.out.println("Welcome to the help desk. What is your name?");
-        t.setName(reader.nextLine());
+        //t.setName(reader.nextLine());
+	String newName = reader.nextLine();
         System.out.println("Do you have a problem with your cupholder?(y/n)");
         String ans = reader.nextLine();
+	int newPriority;
+	String newDeskOp;
         if(ans.equals("y")){
-            t.setPriority(2);
-            t.setDeskOp("brokenCupholder");
+            //t.setPriority(2);
+	    newPriority = 2;
+            //t.setDeskOp("brokenCupholder");
+	    newDeskOp = "brokenCupholder";
         }
         else{
             System.out.println("The only other problem people have with computers are viruses.");
-	    t.setPriority(1);
-            t.setDeskOp("reinstallOS");
+	    //t.setPriority(1);
+	    newPriority = 1;
+            //t.setDeskOp("reinstallOS");
+	    newDeskOp = "reinstallOS";
         }
         System.out.println("Please stand by.");
         System.out.println("------------");
+
+	Ticket t = new Ticket(IDtracker, newPriority, newName, newDeskOp);
+	_data.add(t);
     }
     
     //respond method to help user after a dequeue
-    public void respond(Ticket t){
+    public void respond(){
+	Ticket t = (Ticket)_data.removeMin();
         System.out.println("Thank you for your patience " + t.getName());
         if(t.getDeskOp().equals("reinstallOS")){
             System.out.println("You will need to reinstall your OS to get rid of viruses.");
@@ -71,14 +90,15 @@ public class HelpDesk {
     public static void main(String[] args){
 	HelpDesk hello = new HelpDesk();
 	//	Ticket jeff = new Ticket(IDtracker);
-	hello.createTicket();
-	hello.createTicket();
-	hello.createTicket();
-	hello.createTicket();
-	hello.createTicket();
-	while(!(hello.dataEmpty())){
+	hello.continuous();
+	while(hello.continuous){
 	    hello.helpSequence();
-	    //hello.respond();
+	    hello.continuous();
+
+	}
+	while(!(hello.dataEmpty())){
+
+	    hello.respond();
 	    hello.setIDtracker();
 	}
 	/*

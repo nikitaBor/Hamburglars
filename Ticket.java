@@ -13,7 +13,7 @@ public class Ticket implements Comparable<Ticket>{
     private int _ID;
     private boolean helped;
     
-    public Ticket(int newID){
+    public Ticket(int newID, int newPriority, String newName, String newDeskOp){
         //default initializations
         _ID = -1;
         name = "UNKNOWN USER";
@@ -23,6 +23,9 @@ public class Ticket implements Comparable<Ticket>{
         //
 	        
         _ID = newID;
+	priority = newPriority;
+	name = newName;
+	deskOp = newDeskOp;
 	/*
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Welcome to the help desk. What is your name?");
