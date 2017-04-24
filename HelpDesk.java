@@ -34,7 +34,7 @@ public class HelpDesk {
 	}
     }
 
-    // 
+    // gives user options for help, add to the APQ
     public void helpSequence(){
 	// Read from Scanner & System.in
         Scanner reader = new Scanner(System.in);
