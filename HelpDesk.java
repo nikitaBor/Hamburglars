@@ -22,7 +22,7 @@ public class HelpDesk {
     }
     
     public void createTicket(){
-	Ticket jeff = new Ticket(IDtracker);	
+	Ticket jeff = new Ticket(IDtracker());	
 	_data.add(jeff);
     }
 
@@ -63,8 +63,9 @@ public class HelpDesk {
         System.out.println("------------");
     }
     
-    public void setIDtracker() {
-        IDtracker += 1;   
+    public int setIDtracker() {
+        IDtracker += 1; 
+	return IDtracker;
     }
     
     public static void main(String[] args){
