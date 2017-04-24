@@ -1,7 +1,7 @@
-/*=====
+/*==================================
  * class Ticket
  * will be used for class HelpDesk
- =====*/
+ ==================================*/
 
 import java.util.Scanner;
 

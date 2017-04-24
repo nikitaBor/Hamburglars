@@ -118,11 +118,11 @@ public class HelpDesk {
 	foo.continuous(); // 3
 	foo.helpSequence(); // passreset
 
-        foo.continuous();
-	foo.helpSequence();
-
-        foo.continuous();
-	foo.helpSequence();
+        foo.continuous(); // 4
+	foo.helpSequence(); // cupholder
+ 
+        foo.continuous(); // 5
+	foo.helpSequence(); // passreset
 	
 	foo.respond();
 	foo.respond();
