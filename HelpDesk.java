@@ -22,7 +22,7 @@ public class HelpDesk {
     }
     
     public void createTicket(){
-	Ticket jeff = new Ticket(IDtracker());	
+	Ticket jeff = new Ticket(setIDtracker());	
 	_data.add(jeff);
     }
 
