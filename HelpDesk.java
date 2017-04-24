@@ -45,7 +45,7 @@ public class HelpDesk {
         }
         System.out.println("Please stand by.");
         System.out.println("------------");
-	//}
+    }
     
     //respond method to help user after a dequeue
     public void respond(){
